@@ -17,10 +17,6 @@
         <a class="navigation-logo" 
            href="https://github.com/education" 
            aria-label="GitHub Education">
-          
-           <span 
-            class="navigation-back-arrow" 
-            aria-hidden="true">‹</span>
 
           <img src="assets/images/github-mark.svg" width="24" height="24" alt=""/>
         </a>
@@ -31,13 +27,20 @@
          </a>
       </div>
       
-      <nav id="navigation-panel" class="navigation-panel" aria-label="Capitoli della storia">
+      <button class="navigation-toggle"
+        type="button"
+        aria-label="Apri il menu"
+        popovertarget="navigation-panel">
+        <img src="assets/images/menu.svg" width="24" height="24" alt=""/>
+      </button>
 
+      <nav id="navigation-panel" class="navigation-panel" aria-label="Capitoli della storia">
         <ul class="navigation-list">
-        <li><a href="#concept"><span>Concept</span></a></li>
-        <li><a href="#sitemap"><span>Sitemap</span></a></li>
-        <li><a href="#assets"><span>Assets</span></a></li>
-        <li><a href="#highlights"><span>Highlights</span></a></li>
+        <li><a href="#concept">Concept</a></li>
+        <li><a href="#sitemap">Sitemap</a></li>
+        <li><a href="#assets">Assets</a></li>
+        <li><a href="#highlights">Highlights</a></li>
+        <li><a href="#case-study">Case study</a></li>
         </ul>
       </nav>
     </div>
@@ -212,10 +215,10 @@
         </div>
 
     <div class="container objectives">
-
       <article class="objective-card">
 
         <div class="objective-icon">
+          <img src="assets/images/IconaMonocolo.png" width="16" height="16" alt=""/>
           </div>
 
         <h3>
@@ -230,8 +233,8 @@
       </article>
 
       <article class="objective-card">
-
         <div class="objective-icon">
+          <img src="assets/images/IconaLibro.png" width="16" height="16" alt=""/>
           </div>
 
         <h3>
@@ -245,8 +248,8 @@
       </article>
 
       <article class="objective-card">
-
         <div class="objective-icon">
+          <img src="assets/images/IconaLente.png" width="16" height="16" alt=""/>
           </div>
 
         <h3>
@@ -612,7 +615,7 @@
         Entra nel progetto.
       </h2>
 
-      <p>
+      <p class="cta-text">
         Esplora il lavoro e scopri il sistema visivo che lo sostiene.
       </p>
 
