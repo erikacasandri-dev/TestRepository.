@@ -26,9 +26,6 @@ html {
 
 
 
-
-
-
 body {
     font-family: var(--font-sans);
     margin: 0;
@@ -456,10 +453,6 @@ h3 {
     color: #777;
     margin-bottom: 15px;
 }
-
-
-
-
 
 
 
@@ -920,65 +913,44 @@ h3 {
 
 
 
-@media (max-width:770px) {
-
-    .eyebrow-cursor {
-      display: inline-block;
-      margin-left: 6px;
-      vertical-align: middle;
-    }
-
+@media (max-width: 999.98px) {
+    
     .navigation-content {
         padding-inline: 16px;
     }
 
+
     .navigation-toggle {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 5px;
+        align-items: center;
+            justify-content: center;
         width: 40px;
         height: 40px;
         margin-left: auto;
-        padding: 0 9px;
+        padding: 0;
         background: none;
         border: 0;
         cursor: pointer;
     }
+
     
-    .navigation-toggle-bar {
-        display: block;
-        height: 2px;
-        background: #fff;
-        transition: transform 0.2s ease, opacity 0.2s ease;
-    }
-
-    .navigation-toggle[aria-expanded="true"] .navigation-toggle-bar:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-    }
-
-    .navigation-toggle[aria-expanded="true"] .navigation-toggle-bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .navigation-toggle[aria-expanded="true"] .navigation-toggle-bar:nth-child(3) {
-        transform: translateY(-7px) rotate(45deg);
-    }
-
     .navigation-panel {
         display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
+        position: fixed;
+        top: var(--nav-height);   
+        bottom: auto;      
+        left: 0;       
+        width: auto;
+        height: auto;
         margin: 0;
         padding: 8px 16px 16px;
-        background: #050505;
-        border-left: 0;
+        border: 0;               
         border-bottom: 1px solid #252525;
+        background: #050505;
+        color: #fff;
     }
 
-    .navigation-panel.is-open {
+    .navigation-panel:popover-open {
         display: block;
     }
 
@@ -994,61 +966,11 @@ h3 {
         font-size: 15px;
         border-bottom: 1px solid #1c1c1c;
     }
-
-
-
-
-
-
-
-
-    .hero {
-        padding: 56px 0 48px;
-    }
-    
-    .hero-title {
-        font-size: 34px;
-        font-weight: 400;
-    }
-
-
-
-
-
-
-
-    .final-container {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .final-intro {
-        padding-top: 50px;
-        padding-bottom: 40px;
-    }
-
-    .method-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding-top: 30px;
-        padding-bottom: 30px;
-    }
-
-    .quote-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-        padding-top: 40px;
-        padding-bottom: 40px;
-    }
-
-    .system-placeholder {
-        min-height: 230px;
-        padding: 14px;
-    }
-
 }
 
- @media (max-width: 900px) {
+
+@media (max-width: 900px) {
+
     .concept-grid,
     .sitemap-content,
     .assets-content {
@@ -1080,5 +1002,47 @@ h3 {
     .sitemap,
     .assets-section {
         padding: 80px 0;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 56px 0 48px;
+    }
+
+    .hero-title {
+        font-size: 34px;
+        font-weight: 400;
+    }
+
+    .final-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .final-intro {
+        padding-top: 50px;
+        padding-bottom: 40px;
+    }
+
+    .method-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .quote-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .system-placeholder {
+        min-height: 230px;
+        padding: 14px;
     }
 }

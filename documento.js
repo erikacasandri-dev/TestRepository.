@@ -10,30 +10,27 @@ document.addEventListener("DOMContentLoaded", () => {
   const breakdownTabsButtons =
     document.querySelectorAll(".breakdownTabs-button");
 
+  function selectBreakdownTab(selectedIndex) {
+
+    for (let i = 0; i < breakdownTabsItems.length; i++) {
+
+      const isSelected = i === selectedIndex;
+
+      breakdownTabsItems[i]
+        .classList.toggle("is-selected", isSelected);
+
+      if (breakdownTabsButtons[i]) {
+        breakdownTabsButtons[i]
+          .classList.toggle("is-selected", isSelected);
+      }
+
+    }
+
+  }
 
   if (breakdownTabs) {
 
     breakdownTabs.classList.add("breakdownTabs-ready");
-
-    function selectBreakdownTab(selectedIndex) {
-
-      for (let i = 0; i < breakdownTabsItems.length; i++) {
-
-        if (i === selectedIndex) {
-
-          breakdownTabsItems[i]
-            .classList.add("is-selected");
-
-        } else {
-
-          breakdownTabsItems[i]
-            .classList.remove("is-selected");
-
-        }
-
-      }
-
-    }
 
     for (let i = 0; i < breakdownTabsButtons.length; i++) {
 
@@ -46,17 +43,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+    selectBreakdownTab(0);
+
   }
 
 
-  const navigation =
-    document.querySelector(".navigation");
+
 
   const navigationPanel =
     document.querySelector("#navigation-panel");
 
   const desktopMedia =
     window.matchMedia("(min-width: 1000px)");
+
+  function isPopoverOpen(element) {
+
+    try {
+      return element.matches(":popover-open");
+    } catch (error) {
+      return false;
+    }
+
+  }
 
   function updateNavigation() {
 
@@ -65,6 +73,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (desktopMedia.matches) {
+
+      if (isPopoverOpen(navigationPanel)) {
+        navigationPanel.hidePopover();
+      }
 
       navigationPanel.removeAttribute("popover");
 
@@ -79,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
-
+  
   updateNavigation();
 
   desktopMedia.addEventListener(
@@ -101,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           if (
             !desktopMedia.matches &&
-            navigationPanel.matches(":popover-open")
+            isPopoverOpen(navigationPanel)
           ) {
 
             navigationPanel.hidePopover();
