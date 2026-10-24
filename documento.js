@@ -1,130 +1,85 @@
-document.addEventListener("DOMContentLoaded", () => {
+(() => {
+  const navigation = document.querySelector("#navigation");
+  const toggle = document.querySelector(".navigation-toggle");
+  const panel = document.querySelector("#navigation-panel");
 
-
-  const breakdownTabs =
-    document.querySelector(".breakdownTabs");
-
-  const breakdownTabsItems =
-    document.querySelectorAll(".breakdownTabs-item");
-
-  const breakdownTabsButtons =
-    document.querySelectorAll(".breakdownTabs-button");
-
-  function selectBreakdownTab(selectedIndex) {
-
-    for (let i = 0; i < breakdownTabsItems.length; i++) {
-
-      const isSelected = i === selectedIndex;
-
-      breakdownTabsItems[i]
-        .classList.toggle("is-selected", isSelected);
-
-      if (breakdownTabsButtons[i]) {
-        breakdownTabsButtons[i]
-          .classList.toggle("is-selected", isSelected);
-      }
-
-    }
-
+  if (!navigation || !toggle || !panel) {
+    return;
   }
 
-  if (breakdownTabs) {
+  const mobileMedia = window.matchMedia("(max-width: 768px)");
 
-    breakdownTabs.classList.add("breakdownTabs-ready");
+  const setMenu = (open) => {
+    navigation.classList.toggle("is-open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Chiudi il menu" : "Apri il menu");
+  };
 
-    for (let i = 0; i < breakdownTabsButtons.length; i++) {
+  toggle.addEventListener("click", () => {
+    setMenu(!navigation.classList.contains("is-open"));
+  });
 
-      breakdownTabsButtons[i].addEventListener(
-        "click",
-        () => {
-          selectBreakdownTab(i);
-        }
-      );
-
+  panel.addEventListener("click", (event) => {
+    if (event.target.closest("a")) {
+      setMenu(false);
     }
+  });
 
-    selectBreakdownTab(0);
-
-  }
-
-
-
-
-  const navigationPanel =
-    document.querySelector("#navigation-panel");
-
-  const desktopMedia =
-    window.matchMedia("(min-width: 1000px)");
-
-  function isPopoverOpen(element) {
-
-    try {
-      return element.matches(":popover-open");
-    } catch (error) {
-      return false;
+  document.addEventListener("click", (event) => {
+    if (!navigation.contains(event.target)) {
+      setMenu(false);
     }
+  });
 
-  }
-
-  function updateNavigation() {
-
-    if (!navigationPanel) {
-      return;
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && navigation.classList.contains("is-open")) {
+      setMenu(false);
+      toggle.focus();
     }
+  });
 
-    if (desktopMedia.matches) {
+  mobileMedia.addEventListener("change", () => {
+    setMenu(false);
+  });
 
-      if (isPopoverOpen(navigationPanel)) {
-        navigationPanel.hidePopover();
-      }
+  const sectionLinks = Array.from(panel.querySelectorAll('a[href^="#"]'));
 
-      navigationPanel.removeAttribute("popover");
+  const targets = sectionLinks
+    .map((link) => document.querySelector(link.getAttribute("href")))
+    .filter(Boolean);
 
+  const setActive = (link, active) => {
+    link.classList.toggle("is-active", active);
+
+    if (active) {
+      link.setAttribute("aria-current", "true");
     } else {
-
-      navigationPanel.setAttribute(
-        "popover",
-        "auto"
-      );
-
+      link.removeAttribute("aria-current");
     }
+  };
 
-  }
+  if ("IntersectionObserver" in window && targets.length > 0) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const current = sectionLinks.find(
+            (link) => link.getAttribute("href") === `#${entry.target.id}`
+          );
 
-  
-  updateNavigation();
-
-  desktopMedia.addEventListener(
-    "change",
-    updateNavigation
-  );
-
-
-  if (navigationPanel) {
-
-    const navigationLinks =
-      navigationPanel.querySelectorAll("a");
-
-    for (let i = 0; i < navigationLinks.length; i++) {
-
-      navigationLinks[i].addEventListener(
-        "click",
-        () => {
-
-          if (
-            !desktopMedia.matches &&
-            isPopoverOpen(navigationPanel)
-          ) {
-
-            navigationPanel.hidePopover();
-
+          if (!current) {
+            return;
           }
 
-        }
-      );
+          if (entry.isIntersecting) {
+            sectionLinks.forEach((link) => setActive(link, link === current));
+          } else {
+            setActive(current, false);
+          }
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px" }
+    );
 
-    }
-
+    targets.forEach((target) => observer.observe(target));
   }
-
-});
+})();

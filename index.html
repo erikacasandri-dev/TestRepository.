@@ -2,65 +2,53 @@
 <html lang="it">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Prime Figures: case study di UI/UX design di Erik Acasandri su un e-commerce premium per figure collezionabili anime e manga.">
+  <meta name="theme-color" content="#050505">
   <title>Prime Figures - Prova pratica Erik Acasandri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Instrument+Sans:wght@600&display=swap">
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
 </head>
 
-<body>
-  <header class="navigation">
-    <div class="navigation-content">
+<body id="top">
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="navigation" id="navigation">
+    <div class="navigation-bar">
 
       <div class="navigation-brand">
-        <a class="navigation-logo"
-           href="https://github.com/education"
-           aria-label="GitHub Education">
-          <img src="assets/images/github-mark.svg" width="30" height="30" alt="" />
+        <a class="navigation-logo" href="https://github.com/education" aria-label="GitHub Education">
+          <img src="assets/images/github-mark.svg" alt="Logo di github" width="30" height="30" alt="">
         </a>
-
-        <a class="navigation-title" href="#top">
-          GitHub <span>Prime Figures</span>
-        </a>
+        <a class="navigation-title" href="#top">GitHub <span>Student Stories</span></a>
       </div>
 
-      <button class="navigation-toggle"
-              type="button"
-              aria-label="Apri il menu"
-              popovertarget="navigation-panel">
-        <img src="assets/images/menu.svg" width="24" height="24" alt="" />
+      <button class="navigation-toggle" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="navigation-panel">
+        <img src="assets/images/menu.svg" alt="Icona menu">
       </button>
 
-      <nav id="navigation-panel" class="navigation-panel" aria-label="Capitoli della storia">
+      <nav class="navigation-panel" id="navigation-panel" aria-label="Capitoli della storia">
         <ul class="navigation-list">
           <li><a href="#concept">Concept</a></li>
-          <li><a href="#sitemap">Sitemap</a></li>
-          <li><a href="#assets">Assets</a></li>
-          <li><a href="#highlights">Highlights</a></li>
-          <li><a href="#case-study">Case study</a></li>
+          <li><a href="#architettura">Architettura</a></li>
+          <li><a href="#identita-visiva">Identità visiva</a></li>
+          <li><a href="#processo">Il processo</a></li>
         </ul>
       </nav>
 
     </div>
   </header>
 
-  <main id="top" tabindex="-1">
+  <main id="contenuto" tabindex="-1">
 
- 
-    <section class="hero">
-      <div class="hero-content container">
-        <p class="eyebrow">
-          Erik Acasandri · UI/UX Design · 2026
-          <svg class="eyebrow-cursor" width="8" height="10" viewBox="0 0 8 10" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <rect width="8" height="10" fill="#5FED83" />
-          </svg>
-        </p>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="frame frame-dark">
+        <p class="eyebrow">Erik Acasandri · UI/UX Design · 2026<span class="cursor" aria-hidden="true"></span></p>
 
-        <h1 class="hero-title">
-          Prime Figures. <br> Dare forma a una passione complessa.
-        </h1>
+        <h1 class="hero-title" id="hero-title">Prime Figures. Dare forma a una passione complessa.</h1>
 
         <p class="hero-description">
           Progettare un e-commerce premium per figure collezionabili anime e manga,
@@ -69,309 +57,232 @@
         </p>
 
         <div class="hero-buttons">
-          <a href="#concept" class="button button-primary">
-            Scopri il progetto
-          </a>
-
-          <a href="#case-study" class="button button-secondary">
-            Esplora il design system
-          </a>
+          <a class="button button-primary" href="#concept">Scopri il progetto</a>
+          <a class="button button-secondary" href="#processo">Esplora il design system</a>
         </div>
 
-        <div class="hero-image-container">
-          <img class="hero-image"
-               src="assets/images/Classifiche ActionFigure.png"
-               alt="Screenshot desktop della classifica Prime Figures">
-        </div>
+        <figure class="hero-figure">
+          <img src="assets/images/Classifiche ActionFigure.png" alt="Pagina Classifiche di Prime Figures con le migliori action figure premium del mese" decoding="async">
+        </figure>
       </div>
     </section>
 
-  
-    <section class="project-info">
-      <div class="container project-info-grid">
-
-        <div>
-          <span class="info-label">Studente</span>
-          <strong>Erik Emanuel <br> Acasandri</strong>
-        </div>
-
-        <div>
-          <span class="info-label">Corso</span>
-          <strong>ITS Web Design e Strategie <br> Digitali</strong>
-        </div>
-
-        <div>
-          <span class="info-label">Modulo</span>
-          <strong>UI/UX Design</strong>
-        </div>
-
-        <div>
-          <span class="info-label">Scuola e anno</span>
-          <strong>ITS Academy i-CREA, CFP <br> Bauer Milano - 2026</strong>
-        </div>
-
+    <section class="project-info" aria-label="Informazioni sul progetto">
+      <div class="frame frame-light frame-flush">
+        <dl class="project-info-grid">
+          <div>
+            <dt>Studente</dt>
+            <dd>Erik Emanuel<br>Acasandri</dd>
+          </div>
+          <div>
+            <dt>Corso</dt>
+            <dd>ITS Web Design e Strategie<br>Digitali</dd>
+          </div>
+          <div>
+            <dt>Modulo</dt>
+            <dd>UI/UX Design</dd>
+          </div>
+          <div>
+            <dt>Scuola e anno</dt>
+            <dd>ITS Academy I-CREA, CFP<br>Bauer Milano · 2026</dd>
+          </div>
+        </dl>
       </div>
     </section>
 
-   
-    <section id="concept" class="concept section-white">
-
-      <div class="container concept-grid">
-
-        <div class="concept-main">
-          <p class="section-label">
-            CONCEPT
-            <svg class="eyebrow-cursor" width="8" height="10" viewBox="0 0 8 10" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <rect width="8" height="10" fill="#5FED83" />
-            </svg>
-          </p>
-
-          <h2>
-            Una passione, <br> troppi livelli di <br> complessità
-          </h2>
-
-          <p>
-            Il mercato delle figure da collezione anime è in forte crescita,
-            ma le piattaforme esistenti sono frammentate,
-            difficili da navigare e non offrono un'esperienza all'altezza
-            del valore dei prodotti.
-          </p>
-
-          <p>
-            I collezionisti spendono centinaia di euro in statuette premium,
-            ma le navigano su siti con architetture confuse, filtri rotti
-            e identità visive inconsistenti.
-          </p>
+    <section class="highlights" id="highlights" aria-labelledby="highlights-title">
+      <div class="frame frame-light">
+        <div class="intro-center">
+          <p class="label">Highlights<span class="cursor" aria-hidden="true"></span></p>
+          <h2 id="highlights-title">Rendere visibili relazioni e scelte</h2>
+          <p>Dalla struttura generale ai punti in cui il lettore decide. Apri un approfondimento per osservare il dettaglio corrispondente.</p>
         </div>
-
-        <aside class="project-menu">
-          <h3>Obiettivo del progetto</h3>
-
-          <a href="#concept">Concept</a>
-          <a href="#sitemap">Sitemap</a>
-          <a href="#assets">Assets</a>
-          <a href="#highlights">Highlights</a>
-          <a href="#case-study">Case Study</a>
-
-          <div class="elaborati">
-            <h3>Gli elaborati</h3>
-            <p>Dal racconto al visual del progetto.</p>
-            <!-- Sostituisci "#" con il link reale al tuo file Figma -->
-            <a href="#">Apri il file Figma</a>
-          </div>
-        </aside>
-
-      </div>
-
-      <div class="container objectives">
-
-        <article class="objective-card">
-          <div class="objective-icon">
-            <img src="assets/images/IconaMonocolo.png" width="16" height="16" alt="" />
-          </div>
-          <h3>Scoprire</h3>
-          <p>
-            Navigare il catalogo per personaggio,
-            universo narrativo o scala di produzione
-            senza perdersi.
-          </p>
-        </article>
-
-        <article class="objective-card">
-          <div class="objective-icon">
-            <img src="assets/images/IconaLibro.png" width="16" height="16" alt="" />
-          </div>
-          <h3>Acquistare</h3>
-          <p>
-            Un percorso d'acquisto chiaro, dalla scheda
-            prodotto dettagliata al checkout ottimizzato.
-          </p>
-        </article>
-
-        <article class="objective-card">
-          <div class="objective-icon">
-            <img src="assets/images/IconaLente.png" width="16" height="16" alt="" />
-          </div>
-          <h3>Seguire le uscite</h3>
-          <p>
-            Monitorare le prossime uscite, i pre-ordini
-            disponibili e le nuove collezioni.
-          </p>
-        </article>
 
       </div>
     </section>
 
+    <section class="concept" id="concept" aria-labelledby="concept-title">
+      <div class="frame frame-light frame-flush">
 
-    <section id="sitemap" class="sitemap">
-      <div class="container">
-
-        <div class="section-intro">
-          <p class="section-label">
-            SITEMAP
-            <svg class="eyebrow-cursor" width="8" height="10" viewBox="0 0 8 10" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <rect width="8" height="10" fill="#5FED83" />
-            </svg>
-          </p>
-
-          <h2>
-            Dare ad ogni personaggio
-            la propria destinazione.
-          </h2>
-
-          <p>
-            L'architettura dell'informazione ruota attorno
-            al personaggio come unità narrativa.
-            Ogni serie ha una pagina dedicata,
-            con la sua identità visiva e i prodotti correlati.
-          </p>
-
-          <p>
-            Il sistema di navigazione permette di passare
-            da "Catalogo" a "Personaggio" con un solo click,
-            riducendo la profondità del percorso di navigazione.
-          </p>
-        </div>
-
-        <div class="sitemap-content">
-
-          <div class="sitemap-description">
-            <h3>Dall'insieme al dettaglio</h3>
-
+        <div class="concept-top">
+          <div class="concept-main">
+            <p class="label label-green">Parte 1 · Concept</p>
+            <h2 class="display-title" id="concept-title">Una passione, troppi livelli di complessità.</h2>
             <p>
-              About, Team e Milestones danno contesto
-              alla ricerca. Nell'archivio viene invece
-              l'informazione dove posso concentrarmi
-              su una fonte.
+              Il mercato delle figure da collezione anime è in forte crescita,
+              ma le piattaforme esistenti sono frammentate, difficili da
+              navigare e non offrono un'esperienza all'altezza del valore dei prodotti.
             </p>
-
-            <a href="#">Apri la mappa completa</a>
-          </div>
-
-          <div class="sitemap-image">
-            <img src="assets/images/sitemap.png"
-                 alt="Screenshot desktop della sitemap Prime Figures">
-          </div>
-
-        </div>
-      </div>
-    </section>
-
- 
-    <section id="assets" class="assets-section">
-      <div class="container">
-
-        <div class="section-intro dark-intro">
-          <p class="section-label">
-            Assets
-            <svg class="eyebrow-cursor" width="8" height="10" viewBox="0 0 8 10" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <rect width="8" height="10" fill="#5FED83" />
-            </svg>
-          </p>
-
-          <h2>
-            Un segno riconoscibile,
-            spazio ai contenuti
-          </h2>
-
-          <p>
-            Nel mio percorso, l'identità diventa un criterio
-            di selezione: il segno accompagna i contenuti.
-            Grigi, linee sottili e spazio libero lasciano
-            emergere titoli e relazioni.
-          </p>
-        </div>
-
-        <div class="assets-content">
-
-          <div class="assets-text">
-            <h3>Un marchio che non compete con gli schemi</h3>
             <p>
-              La monogramma rende il segno riconoscibile
-              senza chiedere attenzione a ciò che accompagna.
-              Il simbolo affianca le informazioni.
+              I collezionisti spendono centinaia di euro in statuette premium,
+              ma le navigano su siti con architetture confuse, filtri rotti
+              e identità visive inconsistenti.
             </p>
           </div>
 
-          <div class="logo-image">
-            <img src="assets/images/logo.png"
-                 alt="Logo Prime Figures">
-          </div>
+          <aside class="concept-aside" aria-label="Indice e materiali del progetto">
+            <h3>Obiettivi del progetto</h3>
+            <ul class="concept-index">
+              <li><a href="#concept">Concept</a></li>
+              <li><a href="#architettura">Architettura</a></li>
+              <li><a href="#identita-visiva">Identità visiva</a></li>
+              <li><a href="#processo">Il processo</a></li>
+            </ul>
+            <div class="concept-docs">
+              <h3>Gli elaborati</h3>
+              <p>Dal racconto alle tavole del progetto.</p>
+              <a class="text-link" href="https://www.figma.com/" target="_blank" rel="noopener noreferrer">Apri il file Figma <span aria-hidden="true">›</span></a>
+            </div>
+          </aside>
+        </div>
 
-          <div class="assets-text">
-            <h3>Il pattern costruisce continuità</h3>
+        <ul class="objectives">
+          <li class="objective-card">
+            <span class="objective-icon"><img src="assets/images/IconaMonocolo.png" width="18" height="18" alt=""></span>
+            <h3>Scoprire</h3>
+            <p>Navigare il catalogo per personaggio, universo narrativo o scala di produzione senza perdersi.</p>
+          </li>
+          <li class="objective-card">
+            <span class="objective-icon"><img src="assets/images/IconaLibro.png" width="18" height="18" alt=""></span>
+            <h3>Acquistare</h3>
+            <p>Un percorso d'acquisto chiaro, dalla scheda prodotto dettagliata al checkout ottimizzato.</p>
+          </li>
+          <li class="objective-card">
+            <span class="objective-icon"><img src="assets/images/IconaLente.png" width="18" height="18" alt=""></span>
+            <h3>Seguire le uscite</h3>
+            <p>Monitorare le prossime uscite, i pre-ordini disponibili e le nuove collezioni per ogni serie.</p>
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+    <section class="architecture" id="architettura" aria-labelledby="architettura-title">
+      <div class="wrap">
+
+        <div class="split">
+          <div>
+            <p class="label label-green">Parte 2 · Architettura</p>
+            <h2 class="display-title" id="architettura-title">Dare ad ogni personaggio la propria destinazione.</h2>
+          </div>
+          <div class="split-text">
             <p>
-              I segmenti richiamano il simbolo.
-              La trama rimanda all'immaginario del
-              DNA e delle T cell: è identità, non un
-              dato scientifico.
+              L'architettura dell'informazione ruota attorno al personaggio come
+              unità narrativa. Ogni serie anime ha una pagina dedicata, con la sua
+              identità visiva e i prodotti correlati.
+            </p>
+            <p>
+              Il sistema di navigazione permette di passare da "Catalogo" a
+              "Personaggio" con un solo click, riducendo la profondità del
+              percorso di navigazione da 4 a 2 livelli.
             </p>
           </div>
+        </div>
 
-          <div class="homepage-image">
-            <img src="assets/images/homepage.png"
-                 alt="Screenshot desktop della homepage Prime Figures">
+        <figure class="mockup">
+          <img src="assets/images/homepage.png" alt="Home page di Prime Figures con la scheda del personaggio Kaido in evidenza" loading="lazy" decoding="async">
+        </figure>
+
+        <div class="levels">
+          <div>
+            <p class="level-label">Struttura · Livello 1</p>
+            <ul class="level level-1">
+              <li>Home</li>
+              <li>Catalogo</li>
+              <li>Personaggi</li>
+              <li>Novità</li>
+              <li>Contatti</li>
+            </ul>
+          </div>
+          <div>
+            <p class="level-label">Struttura · Livello 2</p>
+            <ul class="level level-2">
+              <li>Pagina Personaggio</li>
+              <li>Lista prodotti</li>
+              <li>Scheda prodotto</li>
+              <li>Pre-ordini</li>
+              <li>Spedizioni</li>
+            </ul>
           </div>
 
         </div>
+
       </div>
     </section>
 
+    <section class="identity" id="identita-visiva" aria-labelledby="identita-title">
+      <div class="wrap">
 
-    <section id="highlights" class="highlight section-white">
-      <div class="container final-container">
+        <div class="split">
+          <div>
+            <p class="label label-green">Parte 3 · Identità visiva</p>
+            <h2 class="display-title" id="identita-title">Un'estetica che parla il linguaggio dell'anime.</h2>
+            <div class="split-text split-text-below">
+              <p>
+                Il visual design di Prime Figures deve comunicare l'autenticità del
+                collezionismo e il valore premium dei prodotti. L'ispirazione viene
+                dall'estetica delle case editrici di manga giapponesi: scure, intense, precise.
+              </p>
+              <p>
+                Il pattern di fondo si costruisce sulla ripetizione modulare di
+                elementi decorativi ispirati ai motivi tradizionali giapponesi,
+                rimanendo però minimalista e non invadente.
+              </p>
+            </div>
+          </div>
 
-        <div class="final-intro">
-          <p class="section-label">
-            HIGHLIGHTS
-            <svg class="eyebrow-cursor" width="8" height="10" viewBox="0 0 8 10" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <rect width="8" height="10" fill="#5FED83" />
-            </svg>
-          </p>
+          <div class="identity-side">
+            <p class="side-label">Palette cromatica</p>
+            <ul class="palette">
+              <li class="swatch swatch-ink"><span class="swatch-chip"></span><span class="swatch-name">Nero inchiostro</span></li>
+              <li class="swatch swatch-umber"><span class="swatch-chip"></span><span class="swatch-name">Marrone tabacco</span></li>
+              <li class="swatch swatch-sand"><span class="swatch-chip"></span><span class="swatch-name">Sabbia dorata</span></li>
+              <li class="swatch swatch-gold"><span class="swatch-chip"></span><span class="swatch-name">Oro antico</span></li>
+              <li class="swatch swatch-ivory"><span class="swatch-chip"></span><span class="swatch-name">Avorio</span></li>
+            </ul>
 
-          <h2>Rendere visibili relazioni e scelte</h2>
+            <p class="side-label">Tipografia</p>
+            <div class="type-samples">
+              <p class="type-display">Instrument Sans <span>Display / Heading</span></p>
+              <p class="type-body">Inter Regular <span>Body / UI</span></p>
+            </div>
+          </div>
 
-          <p>
-            Ogni elemento progettato contribuisce a rendere
-            comprensibili le relazioni tra contenuti, persone
-            e strumenti, per costruire un'esperienza coerente.
-          </p>
+        </div>
+
+        <div class="identity-gallery">
+          <figure>
+            <img src="assets/images/logo.png" alt="Identità visiva di Prime Figures: logotipo, palette e tipografia" loading="lazy" decoding="async">
+          </figure>
+          <figure>
+            <img src="assets/images/homepage.png" alt="Scheda prodotto di Prime Figures dedicata alla statuetta di Uchiha Madara" loading="lazy" decoding="async">
+          </figure>
         </div>
 
       </div>
     </section>
 
+    <section class="method" id="metodo" aria-labelledby="metodo-title">
+      <div class="wrap method-grid">
+        <h2 id="metodo-title">Materiali e metodo</h2>
 
-    <section class="method-section section-white">
-      <div class="container final-container method-grid">
-
-        <div class="method-heading">
-          <h2>Ricerca</h2>
-        </div>
-
-        <div class="method-content">
-
+        <div class="accordion">
           <details open>
-            <summary>Che cosa comprendo nella reinterpretazione?</summary>
+            <summary>Che cosa comprende la reinterpretazione?</summary>
             <p>
-              Il progetto prende forma attraverso l'analisi
-              dei contenuti, delle relazioni e delle modalità
-              di accesso alle informazioni. La struttura
-              organizza i materiali in modo chiaro e coerente.
+              Una mappa ricostruita, una selezione ragionata degli elaborati e i
+              criteri di lettura esposti nella storia. Identità, interfacce e
+              diagrammi Prime Figures sono materiali preesistenti. Le tavole di
+              confronto e colori sono sintesi preparate per questa esercitazione.
             </p>
           </details>
 
           <details>
-            <summary>Quali sono le fonti e i vincoli?</summary>
+            <summary>Quali sono le fonti e i limiti?</summary>
             <p>
-              Le scelte progettuali derivano dagli obiettivi
-              del progetto, dai materiali disponibili e
-              dalle esigenze delle persone che utilizzeranno
-              il sistema.
+              Le scelte progettuali derivano dagli obiettivi del progetto, dai
+              materiali disponibili e dalle esigenze delle persone che
+              utilizzeranno il sistema.
             </p>
           </details>
 
@@ -379,143 +290,125 @@
       </div>
     </section>
 
-
-    <section class="quote-section section-white">
-      <div class="container final-container quote-grid">
-
+    <section class="quote" aria-label="Riflessione finale">
+      <figure class="wrap quote-grid">
         <div class="quote-main">
-          <div class="objective-icon">
-            <img src="assets/images/IconaVirgolette.png" width="16" height="16" alt="" />
-          </div>
-
+          <img class="quote-mark" src="assets/images/IconaVirgolette.png" width="36" height="36" alt="" loading="lazy">
           <blockquote>
-            Ora mi chiedo quale domanda aiuti a risolvere
-            e quale possa renderlo possibile.
+            <p>Ora mi chiedo quale domanda aiuti a risolvere e quale passo renda possibile.</p>
           </blockquote>
         </div>
-
-        <div class="quote-author">
-          <svg class="eyebrow-cursor" width="8" height="10" viewBox="0 0 8 10" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <rect width="8" height="10" fill="#5FED83" />
-          </svg>
-
-          <p class="quote-author-name">Erik Acasandri</p>
-
-          <p>Riflessione sul progetto e sul processo di progettazione.</p>
-        </div>
-
-      </div>
+        <figcaption class="quote-author">
+          <span class="quote-author-name">Erik Acasandri</span>
+          <span class="quote-author-role">Riflessione sul progetto · esercitazione didattica</span>
+        </figcaption>
+      </figure>
     </section>
 
-    <!-- CASE STUDY -->
-    <section id="case-study" class="case-study section-white">
-      <div class="container final-container">
+    <section class="process" id="processo" aria-labelledby="processo-title">
+      <div class="wrap">
+        <p class="label label-green">Parte 4 · Il processo</p>
+        <h2 id="processo-title">Anche questa pagina è un progetto.</h2>
+        <p class="process-intro">
+          Documentare il design è parte del design stesso. Ho costruito questa case
+          study seguendo la stessa metodologia iterativa usata per Prime Figures:
+          prototipo, test, revisione.
+        </p>
 
-        <div class="final-intro design-intro">
-          <p class="section-label">
-            DAL PROGETTO AL DESIGN SYSTEM
-            <svg class="eyebrow-cursor" width="8" height="10" viewBox="0 0 8 10" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <rect width="8" height="10" fill="#5FED83" />
-            </svg>
-          </p>
-
-          <h2>Anche questa pagina è un progetto.</h2>
-
-          <p>
-            Per raccontare il lavoro è necessario costruire
-            un'interfaccia coerente, definire regole visive
-            e utilizzare componenti riutilizzabili.
-          </p>
-        </div>
-
-        <div class="system-placeholder">
-          <div class="placeholder-inner">
-            <p>IMMAGINE SEGNAPOSTO</p>
+        <div class="method-card">
+          <div class="method-card-head">
+            <p class="label">Approccio metodologico</p>
             <h3>Studiare il sistema</h3>
-            <span>Tipografia - token - componenti</span>
+            <p class="method-sub">Tipografia · Token · Componenti</p>
           </div>
+
+          <ol class="steps">
+            <li>
+              <span class="step-number">01</span>
+              <h4>Ricerca</h4>
+              <p>Competitor analysis, interviste utenti, benchmark</p>
+            </li>
+            <li>
+              <span class="step-number">02</span>
+              <h4>Struttura</h4>
+              <p>IA, card sorting, wireframe a bassa fedeltà</p>
+            </li>
+            <li>
+              <span class="step-number">03</span>
+              <h4>Visual</h4>
+              <p>Design system, token, componenti riutilizzabili</p>
+            </li>
+            <li>
+              <span class="step-number">04</span>
+              <h4>Prototipo</h4>
+              <p>Mockup hi-fi interattivi su Figma, micro-animazioni</p>
+            </li>
+            <li>
+              <span class="step-number">05</span>
+              <h4>Test</h4>
+              <p>Usability testing, heatmap, iterazione feedback</p>
+            </li>
+            <li>
+              <span class="step-number">06</span>
+              <h4>Consegna</h4>
+              <p>Handoff sviluppatori, documentazione componenti</p>
+            </li>
+          </ol>
         </div>
 
-        <div class="system-cards">
-
-          <details class="system-card" open>
-            <summary>
-              <span class="card-line"></span>
-              <h3>Studiare il sistema</h3>
-            </summary>
-            <p>
-              Definire stili tipografici, colori e spaziature
-              per costruire un linguaggio visivo coerente.
-              Ogni elemento contribuisce all'identità del progetto.
-            </p>
-            <a href="#assets">Esplora gli Asset</a>
-          </details>
-
-          <details class="system-card" open>
-            <summary>
-              <span class="card-line"></span>
-              <h3>Costruire componenti</h3>
-            </summary>
-            <p>
-              Organizzare contenuti e componenti in una
-              gerarchia chiara, rispettando le relazioni
-              tra le sezioni e la navigazione.
-            </p>
-            <a href="#concept">Rivedi il Concept</a>
-          </details>
-
-          <details class="system-card" open>
-            <summary>
-              <span class="card-line"></span>
-              <h3>Verificare il risultato</h3>
-            </summary>
-            <p>
-              Controllare leggibilità, accessibilità
-              e comportamento dell'interfaccia su schermi
-              di dimensioni differenti.
-            </p>
-            <a href="#highlights">Scopri gli Highlights</a>
-          </details>
-
-        </div>
-
-        <p class="project-note">
-          Esercizio per la prova pratica di Web Design.
-          Il sistema visivo viene tradotto in componenti
-          HTML e regole CSS riutilizzabili.
-        </p>
-
+        <ul class="process-links">
+          <li>
+            <a href="#concept">
+              <span class="link-number">1 <span aria-hidden="true">↗</span></span>
+              <h3>Studia l'utente</h3>
+              <p>Leggi la fase di ricerca e i profili utente identificati per Prime Figures.</p>
+            </a>
+          </li>
+          <li>
+            <a href="#architettura">
+              <span class="link-number">2 <span aria-hidden="true">↗</span></span>
+              <h3>Naviga tra i pattern</h3>
+              <p>Esplora le scelte di navigazione e l'architettura informativa del sito.</p>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer">
+              <span class="link-number">3 <span aria-hidden="true">↗</span></span>
+              <h3>Esplora il GitHub del progetto</h3>
+              <p>Accedi al prototipo completo su Figma e agli artefatti del processo.</p>
+            </a>
+          </li>
+        </ul>
       </div>
     </section>
 
-
-    <section class="project-cta">
-      <div class="container final-container">
-
-        <p class="section-label">
-          IL PROGETTO CONTINUA
-          <svg class="eyebrow-cursor" width="8" height="10" viewBox="0 0 8 10" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <rect width="8" height="10" fill="#5FED83" />
-          </svg>
-        </p>
-
-        <h2>Entra nel progetto.</h2>
-
-        <p class="cta-text">
-          Esplora il lavoro e scopri il sistema visivo che lo sostiene.
-        </p>
-
-        <a href="https://www.figma.com/design/5HOMaJ7l0l9KDCC7V2sWjG/Sentcell---Student-Stories---Test-Case-Study--Copy-?node-id=114-947&t=jdFESxCQB90cssjY-1"
-           class="button button-primary"
-           target="_blank"
-           rel="noopener noreferrer">
-          Apri il file Figma
-        </a>
-
+    <section class="project-cta" aria-labelledby="cta-title">
+      <div class="wrap">
+        <h2 id="cta-title">Entra nel progetto.</h2>
+        <p>Esplora il design e ritrova nel sito gli elaborati raccontati in questa storia.</p>
+        <a class="button button-primary" href="https://www.figma.com/design/5HOMaJ7l0l9KDCC7V2sWjG/Sentcell---Student-Stories---Test-Case-Study--Copy-?t=eIGB1pdIxfjM8aTa-1" target="_blank" rel="noopener noreferrer">Apri il file Figma</a>
       </div>
     </section>
 
   </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-row">
+        <a class="footer-logo" href="#top" aria-label="Torna all'inizio">
+          <img src="assets/images/github-mark.svg" width="28" height="28" alt="">
+        </a>
+        <nav class="footer-links" aria-label="Link utili">
+          <a href="https://github.com/education" target="_blank" rel="noopener noreferrer">GitHub Education</a>
+          <a href="https://www.figma.com/design/5HOMaJ7l0l9KDCC7V2sWjG/Sentcell---Student-Stories---Test-Case-Study--Copy-?t=eIGB1pdIxfjM8aTa-1" target="_blank" rel="noopener noreferrer">File Figma</a>
+          <a href="#top">Torna all'inizio <span aria-hidden="true">↑</span></a>
+        </nav>
+      </div>
+      <p class="footer-credits">Student Story di Erik Acasandri · 2026</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
